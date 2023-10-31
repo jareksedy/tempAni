@@ -17,6 +17,7 @@ class ViewController: UIViewController {
             $0.size.equalTo(width)
         }
         view.layer.cornerRadius = width / 2
+        view.alpha = 1
         return view
     }()
     
@@ -42,13 +43,12 @@ private extension ViewController {
     }
     
     @objc func animate() {
-        self.dot.transform = CGAffineTransform(scaleX: 0, y: 0)
-        UIView.animate(withDuration: 1,
-                       delay: 0,
-                       usingSpringWithDamping: 0.3,
-                       initialSpringVelocity: 0.14,
-                       options: [.allowUserInteraction]) {
-            self.dot.transform = CGAffineTransform(scaleX: 1, y: 1)
-        }
+        let animation = CASpringAnimation(keyPath: "transform")
+        animation.stiffness = 150
+        animation.damping = 10
+        animation.mass = 1
+        animation.fromValue = CGAffineTransform(scaleX: 0, y: 0)
+        animation.toValue = CGAffineTransform.identity
+        dot.layer.add(animation, forKey: nil)
     }
 }
