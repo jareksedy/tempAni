@@ -66,7 +66,7 @@ class ViewController: UIViewController {
 
 private extension ViewController {
     func setupUI() {
-        view.backgroundColor = .white
+        //view.backgroundColor = .white
         
         dot1.transform = CGAffineTransform(scaleX: 0, y: 0)
         dot2.transform = CGAffineTransform(scaleX: 0, y: 0)
