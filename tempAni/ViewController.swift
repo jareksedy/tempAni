@@ -103,10 +103,10 @@ private extension ViewController {
         dot1.layer.add(makeAnimation(stiffness: 100, damping: 12), forKey: nil)
         dot2.layer.add(makeAnimation(stiffness: 200, damping: 10), forKey: nil)
         dot3.layer.add(makeAnimation(stiffness: 300, damping: 12), forKey: nil)
-        checkMark.layer.add(makeAnimation(stiffness: 50,
+        checkMark.layer.add(makeAnimation(stiffness: 80,
                                           damping: 10,
-                                          duration: 0.05,
-                                          delay: 0.25), forKey: nil)
+                                          duration: 0.1,
+                                          delay: 0.1), forKey: nil)
     }
     
     func makeAnimation(stiffness: CGFloat,
